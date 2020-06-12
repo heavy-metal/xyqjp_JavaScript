@@ -1,0 +1,93 @@
+.district_text_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 30rpx;
+}
+.district_text_wrap .district_text {
+  padding: 10rpx 0;
+  border-radius: 15rpx;
+  width: 23vw;
+  margin-top: 30rpx;
+  border: 2rpx solid darkgray;
+  text-align: center;
+  font-size: 26rpx;
+  color: darkgray;
+}
+.user_info_wrap {
+  position: relative;
+  font-size: 0;
+}
+.user_info_wrap .user_big_image image {
+  width: 100vw;
+}
+.user_info_wrap .user_smallimage_wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  text-align: center;
+}
+.user_info_wrap .user_smallimage_wrap image {
+  width: 200rpx;
+}
+.user_info_wrap .backbtn {
+  position: absolute;
+  left: 0rpx;
+  width: 120rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selected_login_type {
+  border-bottom: 2rpx solid var(--lineColor);
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  padding-left: 30rpx;
+}
+.selected_login_type .changeLoginType {
+  border: 1rpx solid darkgray;
+  padding: 8rpx 30rpx;
+  margin-left: 30rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: darkgray;
+}
+.name_field_wrap {
+  border-bottom: 2rpx solid var(--lineColor);
+  display: flex;
+  align-items: center;
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+  padding-left: 30rpx;
+}
+.name_field_wrap .text_field {
+  width: 100%;
+}
+.name_field_wrap image {
+  width: 50rpx;
+}
+.remberPsw {
+  padding: 30rpx;
+  color: darkgray;
+  font-size: 28rpx;
+}
+.applyBtn_wrap {
+  padding-top: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.applyBtn_wrap .applyBtn {
+  width: 80vw;
+  color: white;
+  background-color: var(--themeColor);
+  border: 1rpx solid darkgray;
+  border-radius: 30rpx;
+  padding: 25rpx 10rpx;
+  text-align: center;
+}

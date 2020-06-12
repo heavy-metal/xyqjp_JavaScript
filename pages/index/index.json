@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "titleMoreCell": "../../component/titleMoreCell/titleMoreCell",
+    "schoolCell": "../../component/schoolCell/schoolCell",
+    "coachCell": "../../component/coachCell/coachCell"    
+  },
+  "navigationBarTitleText": "星云轻驾培"
+}

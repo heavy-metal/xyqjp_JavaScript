@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/PersonalCenter/index",
+    "pages/mine/index",
+    "pages/schoolDetail/index",
+    "pages/applyUpload/index",
+    "pages/allListTable/index",
+    "pages/search/index",
+    "pages/web/index",
+    "pages/newsList/index",
+    "pages/login/usersmessage/index",
+    "pages/login/studentLogin/checkStudyTime/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#60CAC3",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#60CAC3",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home_selected.png"
+      },
+      {
+        "pagePath": "pages/login/PersonalCenter/index",
+        "text": "我的",
+        "iconPath": "image/mine.png",
+        "selectedIconPath": "image/mine_selected.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-tab": "../../category/tab/index",
+    "van-tabs": "../../category/tabs/index",
+    "van-icon": "../../category/icon/index",
+    "van-action-sheet": "../../category/action-sheet/index",
+    "van-skeleton": "../../category/skeleton/index"
+  }
+}

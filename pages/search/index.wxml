@@ -1,0 +1,72 @@
+
+ 
+<!-- 展示地区选择的列表 -->
+<van-action-sheet show="{{ show }}" title="选择地区" bind:close="onClose">
+  <view class="district_text_wrap">
+    <view class="district_text" wx:for="{{districtArray}}"bind:tap="districtClick" data-index="{{index}}">{{item.name}}</view>
+  </view>
+</van-action-sheet>
+
+<view class="search_wrap">
+  <view class="text_image_wrap" bind:tap="clicj">
+     <view style="color:white">{{districtName}}</view> 
+     <van-icon name="arrow-down" style="color:white"/> 
+  </view>
+  <view class="input_wrap">
+     <van-search
+      value="{{ value }}"
+      shape="round"
+      background="var(--themeColor)"
+      placeholder="请输入搜索关键词"
+      bind:search="onSearch"
+      bind:change="searchbarChange"
+      
+      />
+  </view>
+</view>
+
+<van-tabs bind:change="tabsChange" sticky animated swipeable color="var(--themeColor)" border="false">
+  <van-tab title="驾校">
+    <view wx:if="{{schoolListArray.length===0}}">
+       <image mode="widthFix" style="width:100vw" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590739419381&di=b7241e0627f0d40f9b162c16048a520c&imgtype=0&src=http%3A%2F%2Fwww.qianyisou.com%2FContent%2FImages%2Fmbno_img.jpg"/>
+    </view>
+    <view class="school_list" wx:for="{{schoolListArray}}" wx:key="InsId" bind:tap="schoolDetailClick" data-index="{{index}}">
+      <schoolCell
+      image="{{item.SchImage}}"
+      title="{{item.ShortName}}"
+      subtitle="{{item.District}}"
+      model="{{item}}"
+      ></schoolCell>
+    </view>    
+  </van-tab>
+    
+  <van-tab title="教练">
+    <view wx:if="{{coachListArray.length===0}}">
+       <image mode="widthFix" style="width:100vw" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590739419381&di=b7241e0627f0d40f9b162c16048a520c&imgtype=0&src=http%3A%2F%2Fwww.qianyisou.com%2FContent%2FImages%2Fmbno_img.jpg"/>
+    </view>
+    <view class="coach_list" wx:for="{{coachListArray}}" wx:key="CoachId" bind:tap="coachDetailClick" data-index="{{index}}">
+      <coachCell
+      image="{{item.CoachImage}}"
+      title="{{item.Name}}"
+      subtitle="{{item.SchoolName}}"
+      model="{{item}}"
+      starValue="{{item.StarLevel===0?5:item.StarLevel}}"
+      ></coachCell> 
+      </view>       
+  </van-tab>
+
+  <van-tab title="报名点">
+    <view wx:if="{{regSiteListArray.length===0}}">
+       <image mode="widthFix" style="width:100vw" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590739419381&di=b7241e0627f0d40f9b162c16048a520c&imgtype=0&src=http%3A%2F%2Fwww.qianyisou.com%2FContent%2FImages%2Fmbno_img.jpg"/>
+    </view>
+    <view class="school_list" wx:for="{{regSiteListArray}}" wx:key="RegSiteId" bind:tap="regSiteDetailClick" data-index="{{index}}">
+      <schoolCell
+      image="{{item.RegSiteImage}}"
+      title="{{item.RegSiteName}}"
+      subtitle="{{item.District}}"
+      model="{{item}}"
+      ></schoolCell>
+    </view>     
+  </van-tab>
+</van-tabs>
+

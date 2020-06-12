@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "search":"../../component/search/search/",
+    "schoolCell": "../../component/schoolCell/schoolCell",
+    "coachCell": "../../component/coachCell/coachCell"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "报名列表",
+  "backgroundTextStyle": "dark"
+}

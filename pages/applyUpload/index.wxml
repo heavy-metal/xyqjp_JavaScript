@@ -1,0 +1,71 @@
+<!--pages/applyUpload/index.wxml-->
+
+
+<view class="apply_title">报名信息</view>
+<view class="apply_info_wrap" wx:for="{{titleArray}}" wx:key="this">
+    <view class="apply_info_title">{{titleArray[index]}}</view>
+    <view class="apply_info_subtitle">{{contentArray[index]}}</view>
+</view>
+<view class="apply_title">我的信息</view>
+
+<view class="chooseSex">
+    <image src="https://i.loli.net/2020/05/29/jCm9pfoqRt37c4d.png" mode="widthFix"/>
+    <view class="{{num===1?'selected':'cancel_selected'}}" bind:tap="clickMan" style="border-top-left-radius: 20rpx;border-bottom-left-radius: 20rpx;">男</view>
+    <view class="{{num===2?'selected':'cancel_selected'}}" bind:tap="clickGirl" style="border-top-right-radius: 20rpx;border-bottom-right-radius: 20rpx;">女</view>
+    <view class="suggest">(注:深色背景为选中)</view>
+</view>
+
+
+<van-cell-group>
+  <view class="name_field_wrap">
+    <image src="https://i.loli.net/2020/05/29/YPRM5HyF4QNcDvt.png" mode="widthFix"/>
+    <van-field class="text_field"
+    placeholder="请输入姓名"
+    error-message=""
+    required
+    border="{{ false }}"
+    clearable
+    bind:change="namefieldClick"
+  />
+  </view>
+  
+  <view class="name_field_wrap">
+    <image src="https://i.loli.net/2020/05/29/qb4uHC6tUYKJl9A.png" mode="widthFix"/>
+    <van-field class="text_field"
+    placeholder="请输入手机号"
+    error-message=""
+    required
+    type="number"
+    border="{{ false }}"
+    clearable
+    bind:change="phoneFieldClick"
+  />
+  </view>
+
+  <view class="name_field_wrap">
+    <image src="https://i.loli.net/2020/05/29/qjZr8mWMp1ePCc5.png" mode="widthFix"/>
+    <van-field class="text_field"
+    placeholder="备注"
+    error-message=""
+    border="{{ false }}"
+    clearable
+    bind:change="beizhuFieldClick"
+  />
+  </view>
+
+</van-cell-group>
+
+<!-- 报名人数 -->
+<view class="select_people_wrap">
+  <image src="https://i.loli.net/2020/06/02/fFp7D4ebEA3V9XS.png" mode="widthFix"/>
+  <view class="title">报名人数</view>
+  <view class="cart_num_tool">
+    <view class="num_edit" bind:tap="handleItemNumEdit" data-id="{{item.goods_id}}" data-operation="{{-1}}">-</view>
+    <view class="num">{{people}}</view>
+    <view class="num_edit" bind:tap="handleItemNumEdit" data-id="{{item.goods_id}}" data-operation="{{1}}">+</view>
+  </view>
+</view>
+
+<view class="applyBtn_wrap">
+    <view class="applyBtn" bind:tap="applyClick">报名</view>
+</view>

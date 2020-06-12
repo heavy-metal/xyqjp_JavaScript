@@ -1,0 +1,18 @@
+<!--component/coachCell/coachCell.wxml-->
+
+<view class="coach_list">
+      <view class="coachlist_item">
+        <view class="coach_img_wrap">
+            <image mode="aspectFill" src="{{image}}"/>
+        </view>
+        <view class="coach_info_wrap">
+            <view class="coach_name">{{title}}</view>
+            <van-rate readonly value="{{starValue}}" bind:change="onChange"/>
+            <view class="coach_district">{{subtitle}}</view>
+        </view>  
+        <view class="coach_button_wrap">
+          <view class="applyBtn" bind:tap="applyBtnClick">报名</view>
+          <image mode="widthFix" src="https://i.loli.net/2020/05/26/gMSLIY9onXT1DCV.png"/>
+        </view>
+      </view>
+    </view>

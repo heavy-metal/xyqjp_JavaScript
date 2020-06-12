@@ -1,0 +1,11 @@
+<!--components/search/search.wxml-->
+<!-- <view class="searchBar">
+  <navigator url="/pages/search/index" open-type="navigate">
+    搜索
+  </navigator>
+</view> -->
+<view class="searchBar">
+  <navigator url="/pages/search/index" open-type="navigate">
+    <van-icon name="search" size="20px" style="padding-left: 30rpx"/>搜索
+  </navigator>
+</view>

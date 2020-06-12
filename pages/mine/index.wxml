@@ -1,0 +1,83 @@
+
+<!-- 展示地区选择的列表 -->
+<van-action-sheet show="{{ show }}" title="选择驾校" bind:close="onschoolClose">
+  <view class="district_text_wrap">
+    <view class="district_text" wx:for="{{allSchoolArray}}"bind:tap="changeSchoolNameClick" data-index="{{index}}">{{item.ShortName}}</view>
+  </view>
+</van-action-sheet>
+
+
+<view class="user_info_wrap">
+    <view class="user_big_image">
+      <image src="https://i.loli.net/2020/06/08/racgqOwkK3mtbxT.jpg" mode="widthFix"/>
+    </view>
+    <view class="user_smallimage_wrap">
+      <image src="https://i.loli.net/2020/06/08/w3yTKLdiVn7xPYr.png" mode="widthFix"/>
+    </view>
+    <view class="backbtn" bind:tap="backClick" style="top:{{navBarHeight/2}}px">
+      <van-icon name="arrow-left" size="30px" color="white"/>
+    </view>
+</view>
+<!-- 切换登录方式 -->
+<van-action-sheet
+  show="{{ isShow }}"
+  actions="{{ loginArray }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+  description="登录方式"
+/>
+
+<view class="selected_login_type">
+  <van-icon name="setting-o" size="40rpx" color="darkgray"/>
+  <view class="changeLoginType" bind:tap="clickLoginType">
+    <view style="font-size:26rpx">{{loginName}}</view> 
+    <van-icon name="arrow-down"/> 
+  </view>
+  <view wx:if="{{loginName==='驾校'}}" class="chooseSchoolBtn">
+    <view class="changeLoginType">
+      <view style="font-size:26rpx" bind:tap="chooseSchool">{{schoolname}}</view>
+      <van-icon name="arrow-down"/>
+    </view>
+  </view>
+</view>
+
+<van-cell-group>
+  <view class="name_field_wrap">
+    <van-icon name="manager-o" size="40rpx" color="darkgray"/>
+    <van-field class="text_field"
+    placeholder="请输入用户名"
+    error-message=""
+    required
+    value="{{ usernameValue }}"
+    border="{{ false }}"
+    clearable
+    bind:change="namefieldClick"
+  />
+  </view>
+  
+  <view class="name_field_wrap">
+    <van-icon name="pending-payment" size="40rpx" color="darkgray"/>
+    <van-field class="text_field"
+    placeholder="请输入密码"
+    error-message=""
+    required
+    value="{{ passwordValue }}"
+    type="password"
+    border="{{ false }}"
+    clearable
+    bind:change="passwordFieldClick"
+  />
+  </view>
+
+  <view class="remberPsw">
+    <checkbox-group bindchange="handleAllcheckItem">
+      <checkbox checked="{{isRemberPassword}}">记住密码</checkbox>
+    </checkbox-group>
+  </view>
+</van-cell-group>
+
+
+
+<view class="applyBtn_wrap">
+    <view class="applyBtn" bind:tap="loginBtnClick" data-index="{{index}}">登录</view>
+</view>

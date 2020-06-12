@@ -1,0 +1,124 @@
+
+.searchBar {
+  height: 80rpx;
+  padding: 10rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;    
+  z-index: 1;
+  navigator {
+    height: 100%;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    border-radius: 30rpx;
+
+    font-size: 24rpx;
+    background-color: rgba(0,0,0,.2);
+    color: var(--lineColor);
+  }
+}
+
+.index_swiper{
+  swiper{
+    height: 450rpx;
+    swiper-item{
+      navigator{
+        image{
+          height: 450rpx;
+        }
+      }
+    }
+  }
+}
+
+
+.index_navigatorItem{
+  
+  .image_warp{ 
+    display: flex;
+    flex-wrap: wrap;
+    
+    .image_text_wrap{
+      
+      padding: 10rpx;
+      width: 25vw;
+      height: 25vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-right: 5rpx solid var(--lineColor);
+      border-bottom: 5rpx solid var(--lineColor);
+      position: relative;
+      image{
+        width: 35%;
+        padding-bottom: 10rpx;
+      }
+      .text_item{
+        font-size: 26rpx;
+      }
+      button{
+        width: 25vw;
+        height: 25vw;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;//完全透明
+      }
+    }
+    
+  }
+}
+
+
+// .school_list{
+//   navigator{
+//     height: 170rpx;
+//     border-bottom: 8rpx solid var(--lineColor);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     .school_img_wrap{
+//       padding: 0 15rpx;
+//       flex: 2;
+//       display: flex; 
+//       justify-content: center;
+//       align-items: center; 
+//       image{width: 150rpx;}
+//     }
+//     .school_info_wrap{
+//       height: 100%;
+//       flex: 4;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-evenly;
+//       .school_name{
+//         width: 100%;
+//       }
+//       .school_district{
+//         color: darkgray;
+//         font-size: 25rpx;
+//       }
+//     }
+//     .school_button_wrap{
+//       flex: 3;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       .applyBtn{
+//         font-size: 28rpx;
+//         border: 5rpx solid var(--lineColor);
+//         border-radius: 20rpx;
+//         text-align: center;
+//         padding: 8rpx 40rpx;
+//         margin-right: 20rpx;
+//       }
+//       image{
+//         width: 30rpx;
+//       }
+//     }
+   
+//   }
+// }

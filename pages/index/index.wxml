@@ -1,0 +1,83 @@
+<!-- 轮播图 -->
+<van-skeleton  title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+  <view class="searchBar">
+    <navigator url="/pages/search/index" open-type="navigate">
+      <van-icon name="search" size="20px" style="padding-left: 30rpx"/>搜索
+    </navigator>
+  </view>
+  <view class="index_swiper">
+    <swiper indicator-dots="true" autoplay="true" circular="true" indicator-active-color="white"
+    bindchange="">
+      <swiper-item wx:for="{{swiperList}}" wx:key="InfoId">
+        <navigator url="/pages/web/index?url={{item.FileUrl}}">
+          <image src="{{item.InfoIcon}}"/>
+        </navigator>
+      </swiper-item>    
+    </swiper>
+  </view>
+  <view class="index_navigatorItem">
+    <view class="image_warp">
+      <view class="image_text_wrap" wx:for="{{imageUrl}}" wx:key="this" data-index="{{index}}" bind:tap="navigatorItemTap">
+        <image  mode="widthFix" src="{{item}}"/>
+        <view class="text_item">{{textArray[index]}}</view>
+        <view wx:if="{{index===1}}">
+          <button open-type="contact"></button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <titleMoreCell name="推荐驾校" bind:tap="moreSchoolClick"></titleMoreCell>
+  <view class="school_list" wx:for="{{schoolInfoArray}}" wx:key="InsId" bind:tap="schoolDetailClick" data-index="{{index}}">
+    <schoolCell
+      image="{{item.SchImage}}"
+      title="{{item.ShortName}}"
+      subtitle="{{item.District}}"
+      model="{{item}}"
+    ></schoolCell>
+  </view>  
+  <titleMoreCell name="推荐教练" bind:tap="moreCoachClick"></titleMoreCell>
+  <view class="coach_list" wx:for="{{coachInfoArray}}" wx:key="CoachId" bind:tap="coachDetailClick" data-index="{{index}}">
+    <coachCell
+      image="{{item.CoachImage}}"
+      title="{{item.Name}}"
+      subtitle="{{item.SchoolName}}"
+      model="{{item}}"
+      starValue="{{item.StarLevel===0?5:item.StarLevel}}"
+    ></coachCell>
+  </view>  
+  <titleMoreCell name="政策咨询" bind:tap="moreZczxClick"></titleMoreCell>
+  <view class="zczx_list" wx:for="{{zczxInfoArray}}" wx:key="InfoId">
+    <schoolCell
+      image="{{item.InfoIcon}}"
+      title="{{item.InfoTitle}}"
+      subtitle="{{item.InfoFrom}}"
+      isHiddenApplyBtn="{{true}}"
+    ></schoolCell>
+  </view>
+</van-skeleton>
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

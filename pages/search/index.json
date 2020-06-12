@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-search": "../../category/search/index",
+    "schoolCell": "../../component/schoolCell/schoolCell",
+    "coachCell": "../../component/coachCell/coachCell"
+  },
+  "navigationBarTitleText": "搜索中心",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

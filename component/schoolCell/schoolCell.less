@@ -1,0 +1,54 @@
+/* component/schoolCell/schoolCell.wxss */
+
+.school_list{
+    .schoollist_item{
+      // height: 170rpx;
+      padding: 26rpx 0;
+      border-bottom: 5rpx solid var(--lineColor);
+      display: flex;
+      
+      .school_img_wrap{
+        flex: 3;
+        display: flex; 
+        justify-content: center;
+        align-items: center; 
+        image{width: 80%;}
+      }
+      .school_info_wrap{
+      
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
+        .school_name{
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+        .school_district{
+          color: darkgray;
+          font-size: 25rpx;
+        }
+      }
+      .school_button_wrap{
+        flex: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .applyBtn{
+          font-size: 28rpx;
+          border: 4rpx solid var(--lineColor);
+          border-radius: 20rpx;
+          text-align: center;
+          padding: 8rpx 40rpx;
+          margin-right: 20rpx;
+        }
+        image{
+          width: 30rpx;
+        }
+      }
+     
+    }
+  }

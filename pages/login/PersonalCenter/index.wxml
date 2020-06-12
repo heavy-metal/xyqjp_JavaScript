@@ -1,0 +1,40 @@
+<!--pages/login/PersonalCenter/index.wxml-->
+
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+  <view class="user_info_wrap" wx:if="{{model.UserId}}">
+    <view class="user_big_image">
+      <image src="{{model.UserImg}}" mode="aspectFill"/>
+    </view>
+    <view class="user_smallimage_wrap">
+      <image src="{{model.UserImg}}" mode="aspectFill"/>
+      <view class="username">{{model.TrueName}}</view>
+    </view>
+    <view class="backbtn" bind:tap="backClick" style="top:{{navBarHeight/2}}px">
+      <van-icon name="arrow-left" size="30px" color="white"/>
+    </view>
+  </view>
+
+  <view class="index_navigatorItem" wx:if="{{model.UserId}}">
+    <view class="image_warp">
+      <view class="image_text_wrap" wx:for="{{titleArray}}" wx:key="this" data-index="{{index}}" bind:tap="navigatorItemTap">
+        <image  mode="widthFix" src="{{iconArray[index]}}"/>
+        <view class="text_item">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else bind:tap="clickLogin">
+    <image src="https://i.loli.net/2020/06/10/3zPQaJqMkdZyWx5.png" mode="aspectFill" style="width:100vw;height:100vh;font-size:0"/>
+  </view>    
+</van-skeleton>
+<!-- 骨架图 -->
+<van-skeleton  title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>
+<van-skeleton title avatar row="3" loading="{{ loading }}" title="true" avatar="true">
+</van-skeleton>

@@ -1,0 +1,55 @@
+.searchBar {
+  height: 80rpx;
+  padding: 10rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+}
+.searchBar navigator {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--lineColor);
+}
+.index_swiper swiper {
+  height: 450rpx;
+}
+.index_swiper swiper swiper-item navigator image {
+  height: 450rpx;
+}
+.index_navigatorItem .image_warp {
+  display: flex;
+  flex-wrap: wrap;
+}
+.index_navigatorItem .image_warp .image_text_wrap {
+  padding: 10rpx;
+  width: 25vw;
+  height: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 5rpx solid var(--lineColor);
+  border-bottom: 5rpx solid var(--lineColor);
+  position: relative;
+}
+.index_navigatorItem .image_warp .image_text_wrap image {
+  width: 35%;
+  padding-bottom: 10rpx;
+}
+.index_navigatorItem .image_warp .image_text_wrap .text_item {
+  font-size: 26rpx;
+}
+.index_navigatorItem .image_warp .image_text_wrap button {
+  width: 25vw;
+  height: 25vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}

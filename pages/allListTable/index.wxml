@@ -1,0 +1,39 @@
+<!--pages/allListTable/index.wxml-->
+
+<search></search>
+
+<van-tabs active="{{active}}" bind:change="tabsChange" sticky animated swipeable color="var(--themeColor)" border="false">
+  <van-tab title="驾校">
+    <view class="school_list" wx:for="{{schoolListArray}}" wx:key="InsId" bind:tap="schoolDetailClick" data-index="{{index}}">
+      <schoolCell
+      image="{{item.SchImage}}"
+      title="{{item.ShortName}}"
+      subtitle="{{item.District}}"
+      model="{{item}}"
+      ></schoolCell>
+    </view>
+  </van-tab>
+ 
+  <van-tab title="教练">
+    <view class="coach_list" wx:for="{{coachListArray}}" wx:key="CoachId" bind:tap="coachDetailClick" data-index="{{index}}">
+      <coachCell
+      image="{{item.CoachImage}}"
+      title="{{item.Name}}"
+      subtitle="{{item.SchoolName}}"
+      model="{{item}}"
+      starValue="{{item.StarLevel===0?5:item.StarLevel}}"
+      ></coachCell>
+</view>
+  </van-tab>
+
+  <van-tab title="报名点">
+    <view class="school_list" wx:for="{{regSiteListArray}}" wx:key="RegSiteId" bind:tap="regSiteDetailClick" data-index="{{index}}">
+      <schoolCell
+      image="{{item.RegSiteImage}}"
+      title="{{item.RegSiteName}}"
+      subtitle="{{item.District}}"
+      model="{{item}}"
+      ></schoolCell>
+    </view>    
+  </van-tab>
+</van-tabs>

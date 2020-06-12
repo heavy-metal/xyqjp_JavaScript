@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "schoolCell": "../../component/schoolCell/schoolCell"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "列表",
+  "backgroundTextStyle": "dark"
+}

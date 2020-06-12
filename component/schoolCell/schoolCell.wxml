@@ -1,0 +1,18 @@
+<!--component/schoolCell/schoolCell.wxml-->
+<view class="school_list">
+      <view class="schoollist_item">
+        <view class="school_img_wrap">
+            <!-- <image mode="widthFix" src="{{.goodsitem_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"/> -->
+            <image mode="widthFix" src="{{image}}"/>
+        </view>
+        <view class="school_info_wrap">
+            <view class="school_name">{{title}}</view>
+            <view class="school_district">{{subtitle}}</view>
+        </view>  
+        <view class="school_button_wrap">
+          <!-- <view style="{{isHiddenApplyBtn?'opacity:0':'opacity:1'}}"class="applyBtn" bind:tap="applyBtnClick" data-id="{{model.InsId}}">报名</view> -->
+          <view style="opacity:{{isHiddenApplyBtn?0:1}}"class="applyBtn" bind:tap="applyBtnClick" data-id="{{model.InsId}}">报名</view>
+          <image mode="widthFix" src="https://i.loli.net/2020/05/26/gMSLIY9onXT1DCV.png"/>
+        </view>
+      </view>
+    </view>

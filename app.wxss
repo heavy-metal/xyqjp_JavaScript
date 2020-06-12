@@ -1,0 +1,18 @@
+page,view,text,swiper,swiper-item,image,navigator,van-tabs,van-tab{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 主题颜色 */
+page {
+  --themeColor: #60CAC3;
+  font-size: 28rpx;
+  --lineColor: #F2F3F7;
+}
+
+image {
+  width: 100%;
+}
+
+@import "./styles/iconfont.wxss";

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-field": "../../category/field/index"
+    
+  },
+  "navigationBarTitleText": "填写信息"
+}

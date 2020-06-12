@@ -1,0 +1,14 @@
+<!--component/titleMoreCell/titleMoreCell.wxml-->
+
+
+<view class="index_title_moreItem">
+  <view class="title_wrap">
+    <view class="title">{{name}}</view>
+  </view>
+
+  <view class="more_wrap">
+    <view class="more_text">更多</view>
+    <image mode="widthFix" src="https://i.loli.net/2020/05/26/gMSLIY9onXT1DCV.png"/>
+    <!-- <text class="iconfont icon-gengduo"></text> -->
+  </view> 
+</view>

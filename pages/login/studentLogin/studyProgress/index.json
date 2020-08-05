@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-circle": "../../category/circle/index"
+  },
+  "navigationBarTitleText": "学习进度"  
+}

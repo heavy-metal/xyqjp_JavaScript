@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "checkStudyTimeCell": "../../component/checkStudyTimeCell/checkStudyTimeCell"
+  },
+  "navigationStyle":"custom"
+}

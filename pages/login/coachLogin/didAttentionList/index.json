@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-search": "../../category/search/index",
+    "coachCell": "../../component/coachCell/coachCell"
+  },
+  "navigationBarTitleText": "已关注学员",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

@@ -11,7 +11,7 @@
             <view class="coach_district">{{subtitle}}</view>
         </view>  
         <view class="coach_button_wrap">
-          <view class="applyBtn" bind:tap="applyBtnClick">报名</view>
+          <view wx:if="{{!isHiddenApplyBtn}}" class="applyBtn" bind:tap="applyBtnClick">{{buttonName}}</view>
           <image mode="widthFix" src="https://i.loli.net/2020/05/26/gMSLIY9onXT1DCV.png"/>
         </view>
       </view>

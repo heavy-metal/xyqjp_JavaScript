@@ -1,5 +1,5 @@
 // pages/mine/index.js
-
+var app = getApp()
 import {request} from "../../request/index.js"
 import { hexMD5 } from "../../utils/md5.js"
 Page({
@@ -9,6 +9,8 @@ Page({
    */
   data: {
     schoolname:'请选择',
+    cityName:'',
+    isChooseCityShow:false,
     InsId:'',
     show:false,
     navBarHeight:0,
@@ -29,6 +31,16 @@ Page({
         color: 'gray',
       },
     ],
+    cityArray: [
+      {
+        name: '清远市',
+        color: 'gray',
+      },
+      {
+        name: '梅州市',
+        color: 'gray',
+      }
+    ],
     isShow:false,
     isRemberPassword:false,
     usernameValue:'',
@@ -44,6 +56,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    var cityName = wx.getStorageSync('CityName');
+    console.log(cityName)
+    if(!cityName || cityName==='清远市'){
+      this.setData({cityName:'清远市'})
+      app.globalData.baseUrl='https://qywebser.gdqyjp.com:2061/MobileHttp.aspx?Cmd='
+    }else{
+      this.setData({cityName:'梅州市'})
+      app.globalData.baseUrl='https://mzwebser.gdqyjp.com:2071/MobileHttp.aspx?Cmd='
+    }
+    
+
     wx.getSystemInfo({
       success: e => {   // { statusBarHeight: 20, ... }，单位为 px
          // 获取右上角胶囊的位置信息
@@ -139,6 +163,9 @@ Page({
     }
     request({url:url},this.params)
     .then(result=>{
+
+      wx.setStorageSync('CityName', this.data.cityName);
+
       console.log(this.data.isRemberPassword)
       if(this.data.isRemberPassword){
         var info = {'password':password,
@@ -194,5 +221,24 @@ Page({
       InsId,
       schoolname
     })
+  },
+
+
+  onCityClose(){
+    this.setData({ isChooseCityShow: false });
+  },
+
+  onCitySelect(e){
+    var name = e.detail.name 
+    this.setData({ cityName: name});
+    if(name==='清远市'){
+      app.globalData.baseUrl='https://qywebser.gdqyjp.com:2061/MobileHttp.aspx?Cmd='
+    }else{
+      app.globalData.baseUrl='https://mzwebser.gdqyjp.com:2071/MobileHttp.aspx?Cmd='
+    }
+
+  },
+  chooseCityClick(){
+    this.setData({ isChooseCityShow: true });
   }
 })

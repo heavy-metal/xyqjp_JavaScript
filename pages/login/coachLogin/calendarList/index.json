@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-calendar": "../../../../category/calendar/index"
+  },
+  "navigationBarTitleText": "排班"
+}

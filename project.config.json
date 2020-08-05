@@ -4,8 +4,9 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
@@ -89,6 +90,13 @@
 					"id": -1,
 					"name": "登陆模块",
 					"pathName": "pages/mine/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学习进度",
+					"pathName": "pages/login/studentLogin/studyProgress/index",
 					"scene": null
 				}
 			]

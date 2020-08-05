@@ -28,6 +28,7 @@ Page({
   },
   isFirstCome:false,
   tabsTitle:'',
+  totalPage:0,
   /**
    * 生命周期函数--监听页面加载
    */
@@ -68,6 +69,7 @@ Page({
       this.setData({
         classList:[...this.data.classList,...result.data.Data]
       })
+      this.totalPage=result.data.Page.TotalPage
       wx.stopPullDownRefresh();
     })
   },
@@ -85,7 +87,7 @@ Page({
   // 滚动条触底 上拉加载更多页
   onReachBottom() {
     if(this.tabsTitle!='报班'){return}
-    if(this.params.CurrentPage>=this.params.PageSize){
+    if(this.params.CurrentPage>=this.totalPage){
       wx.showToast({
         title: '\n没有更多了\n',
         icon: 'none',

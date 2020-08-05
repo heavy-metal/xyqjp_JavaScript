@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-field": "../../category/field/index"
+  },
+  "navigationBarTitleText": "投诉建议",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

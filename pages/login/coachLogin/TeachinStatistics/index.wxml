@@ -1,0 +1,54 @@
+<!--pages/login/coachLogin/TeachinStatistics/index.wxml-->
+
+<!-- searchBar="true"
+ bindsearch="searchtap" -->
+<!-- <navBar title='教学统计'
+ background='linear-gradient(to right,#7F7FD5, #86A8E7,#91EAE4)' 
+ back="{{true}}" 
+ home="{{false}}" 
+ iconTheme="white"
+ color="white"
+ bindback="handlerGobackClick" 
+ ></navBar> -->
+<view style="padding-top:{{statusBarHeight+44}}px">
+   <view class="navView" style="height:{{statusBarHeight+44}}px">
+      <view class="choosetime" style="height:44px;margin-top:{{statusBarHeight}}px">
+        <van-icon name="arrow-down" size="34rpx" color="white"/>
+        <view class="time_text" bind:tap="choosetimeTap">{{titleText}}</view>
+      </view>
+   </view>
+
+   <view class="backbtn" bind:tap="backClick" style="top:{{statusBarHeight}}px">
+      <van-icon name="arrow-left" size="25px" color="white"/>
+   </view>
+ 
+
+ <van-popup 
+  round 
+  position="bottom" 
+  custom-style="height: 30%" 
+  show="{{ show }}" 
+  bind:close="onClose"
+  >
+    <van-datetime-picker
+    type="date"
+    
+    value="{{ currentDate }}"
+    bind:input="onInput"
+    min-date="{{ minDate }}"
+    formatter="{{ formatter }}"
+    bind:confirm="confirm"
+    bind:cancel="cancel"
+    />
+ </van-popup>
+   
+
+   <view class="check_time_list" wx:for="{{listArray}}" wx:key="this" >
+      <checkStudyTimeCell model="{{item}}"></checkStudyTimeCell>
+   </view>
+   <view wx:if="{{listArray.length===0}}">
+      <image mode="widthFix" style="width:100vw" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590739419381&di=b7241e0627f0d40f9b162c16048a520c&imgtype=0&src=http%3A%2F%2Fwww.qianyisou.com%2FContent%2FImages%2Fmbno_img.jpg"/>
+   </view> 
+</view>
+
+

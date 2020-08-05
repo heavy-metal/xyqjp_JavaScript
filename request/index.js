@@ -1,6 +1,6 @@
 
 let ajaxTimes = 0;
-
+var app = getApp()
 export const request = (URL,params) => {
   return new Promise((resolve,reject)=>{
     ajaxTimes++;
@@ -10,7 +10,8 @@ export const request = (URL,params) => {
       duration: 10000,
     });
     //提取公共部分的url，优化
-    const baseUrl = "http://125.89.196.8:2059/MobileHttp.aspx?Cmd=";
+    // const baseUrl = "http://125.89.196.8:2059/MobileHttp.aspx?Cmd=";
+    var baseUrl = app.globalData.baseUrl
     wx.request({
       
       ...URL,

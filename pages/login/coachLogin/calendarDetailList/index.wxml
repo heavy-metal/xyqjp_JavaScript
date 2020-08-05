@@ -1,0 +1,86 @@
+<!--pages/login/coachLogin/calendarDetailList/index.wxml-->
+<van-tabs active="{{active}}" bind:change="tapsChange" sticky animated swipeable color="var(--themeColor)" border="false">
+  <van-tab title="{{titleText}}">
+    <view wx:if="{{listArray.length===0}}">
+       <image mode="widthFix" style="width:100vw" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590739419381&di=b7241e0627f0d40f9b162c16048a520c&imgtype=0&src=http%3A%2F%2Fwww.qianyisou.com%2FContent%2FImages%2Fmbno_img.jpg"/>
+    </view>
+    <view class="classList_item" wx:for="{{listArray}}" wx:key="ClassId">
+      <view class="class_info">        
+        
+        <view class="class_image_text_wrap">
+          <image src="https://i.loli.net/2020/05/28/Q8GfiUTOehCF7Nl.png" mode="widthFix"/>
+          <view class="class_titleText">{{item.SchTimeBegin}} ~ {{item.SchTimeEnd}}, {{item.Times}}分钟</view>
+        </view>
+        <view class="class_image_text_wrap">
+          <image src="https://i.loli.net/2020/05/28/4cu8rwQaiejoTqp.png" mode="widthFix"/>
+          <view class="class_titleText">{{item.Subject}}，{{item.RegionName}}</view>
+        </view>
+      </view>
+      <view class="class_applybutton">
+        <view class="class_titleText"  data-index="{{index}}">¥{{item.Price}}元,{{SchState===0?'可约':'已约'}}</view>
+      </view>
+    </view>   
+  </van-tab>
+ 
+  <van-tab title="生成排班">
+    <view class="detail_list_wrap"bind:tap="typeTextClick">
+      <view class="detail_title">
+        <view class="title">排班模板</view>
+      </view>
+      <view class="detail_subtitle">
+        <view class="subtitle">{{typeText}}</view>
+        <van-icon name="arrow" color="darkgray" />
+      </view>
+    </view>
+    <view class="detail_list_wrap"bind:tap="subjectClick">
+      <view class="detail_title">
+        <view class="title">培训部分</view>
+      </view>
+      <view class="detail_subtitle">
+        <view class="subtitle">{{subject}}</view>
+        <van-icon name="arrow" color="darkgray" />
+      </view>
+    </view>
+    <view class="detail_list_wrap"bind:tap="addressClick">
+      <view class="detail_title">
+        <view class="title">训练场</view>
+      </view>
+      <view class="detail_subtitle">
+        <view class="subtitle">{{address}}</view>
+        <van-icon name="arrow" color="darkgray" />
+      </view>
+    </view>
+
+    <view wx:if="{{chargesList.length!=0}}" class="Charges">
+      <view class="title">
+        <view style="flex:1">时间区间</view>
+        <view style="flex:1">每段时长</view>
+        <view style="flex:1">每段价格</view>
+      </view>
+      <view class="title" wx:for="{{chargesList}}"wx:key="ConfigId">
+        <view style="flex:1">{{item.BeginTime}} ~ {{item.EndTime}}</view>
+        <view style="flex:1">{{item.Times}}(分钟)</view>
+        <view style="flex:1">¥{{item.Price}}</view>
+      </view>
+    </view>
+
+    <view class="applyBtn_wrap">
+      <view class="applyBtn" bind:tap="loginBtnClick">确 认</view>
+    </view>
+  </van-tab>
+</van-tabs>
+
+<van-popup 
+  position="bottom" 
+  show="{{ show }}" 
+  bind:close="onClose"
+  >
+    <van-picker 
+      color="“darkgray“"
+      show-toolbar
+      title="{{selectTitle}}"
+      bind:confirm="onConfirm" 
+      bind:cancel="onClose"
+      columns="{{ subjectArray }}" 
+      bind:change="onChange" />
+ </van-popup>

@@ -10,9 +10,7 @@ Page({
     infoArray:[],
     
   },
-  params:{
-    UserId:''
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -28,14 +26,15 @@ Page({
 
   getbaseMessageData(loginModel){
     var url = ''
-    var params = this.params
-    params.UserId = loginModel.UserId
+    var params = {}
+    
     if(loginModel.LoginType==='学员'){
       url = 'GetStudentInfo'
+      params.UserId = loginModel.UserId
       params.StuId = loginModel.UserId
     }else if(loginModel.LoginType==='教练'){
       url = 'GetCoachInfo'
-      params.CoachId = loginModel.CoachId
+      params.CoachId = loginModel.UserId
     }else{
       url = 'GetInsInfo'
       params.InsId = loginModel.InsId

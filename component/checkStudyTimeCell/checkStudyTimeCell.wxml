@@ -1,2 +1,23 @@
 <!--component/checkStudyTimeCell/checkStudyTimeCell.wxml-->
-<text>component/checkStudyTimeCell/checkStudyTimeCell.wxml</text>
+
+     <view class="classList_item">
+      <view class="class_info" bind:tap="checkImage">         
+        <view class="class_image_text_wrap">        
+          <image src="https://i.loli.net/2020/05/28/lKuWrO9QPUVXsm7.png" mode="widthFix"/>
+          <view class="class_titleText">{{model.StudyType}} {{model.Duration}}/{{model.GovValidtime}} (小时) (培训/{{model.GovStage}})</view>
+        </view>
+        <view class="class_image_text_wrap">
+          <image src="https://i.loli.net/2020/05/28/Q8GfiUTOehCF7Nl.png" mode="widthFix"/>
+          <view class="time_status">{{model.UpState}}</view>
+          <view class="time_status">{{model.ExeState}}</view>
+          <image wx:if="{{model.GovReason.length!=0}}" style="margin-left:15rpx" src="https://i.loli.net/2020/07/23/Yd17NFSVaomsHJT.png" mode="widthFix"/>
+        </view>
+        <view class="class_image_text_wrap">
+          <image src="https://i.loli.net/2020/05/28/4cu8rwQaiejoTqp.png" mode="widthFix"/>
+          <view class="class_titleText" style="color:darkgray">{{model.StudyDate}} {{model.StartTime}}-{{model.EndTime}}</view>
+        </view>
+      </view>
+      <view class="class_applybutton">
+        <view class="applyBtn" bind:tap="classApplyBtnClick">照片</view>
+      </view>
+     </view>     

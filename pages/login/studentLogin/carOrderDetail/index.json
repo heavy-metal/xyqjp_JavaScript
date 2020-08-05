@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-rate": "../../category/rate/index"
+  },
+  "navigationBarTitleText": "订单"
+}

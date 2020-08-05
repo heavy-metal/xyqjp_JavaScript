@@ -10,7 +10,27 @@
     "pages/web/index",
     "pages/newsList/index",
     "pages/login/usersmessage/index",
-    "pages/login/studentLogin/checkStudyTime/index"
+    "pages/login/studentLogin/checkStudyTime/index",
+    "pages/login/studentLogin/studyProgress/index",
+    "pages/login/studentLogin/bookcar/index",
+    "pages/login/studentLogin/selectbookcar/index",
+    "pages/login/studentLogin/totalBookCar/index",
+    "pages/login/studentLogin/carOrder/index",
+    "pages/login/studentLogin/carOrderDetail/index",
+    "pages/login/changePassword/index",
+    "pages/login/suggest/index",
+    "pages/login/suggestDetail/index",
+    "pages/login/coachLogin/checkStudent/index",
+    "pages/login/coachLogin/checkStudentDetail/index",
+    "pages/login/coachLogin/TeachinStatistics/index",
+    "pages/login/coachLogin/didAttentionList/index",
+    "pages/login/coachLogin/searchOrder/index",
+    "pages/login/coachLogin/searchOrderDetail/index",
+    "pages/login/coachLogin/calendarList/index",
+    "pages/login/coachLogin/calendarDetailList/index",
+    "pages/login/schoolLogin/checkCoach/index",
+    "pages/login/schoolLogin/checkSchoolDetail/index",
+    "pages/login/schoolLogin/searchCar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -46,6 +66,10 @@
     "van-tabs": "../../category/tabs/index",
     "van-icon": "../../category/icon/index",
     "van-action-sheet": "../../category/action-sheet/index",
-    "van-skeleton": "../../category/skeleton/index"
+    "van-skeleton": "../../category/skeleton/index",
+    "navBar": "../../component/navBar/navBar",
+    "van-datetime-picker": "../../category/datetime-picker/index",
+    "van-popup": "../../category/popup/index",
+    "van-picker": "../../category/picker/index"
   }
 }

@@ -4,6 +4,30 @@ App({
 
     wx.setStorageSync("loginModel", {});//删除登录缓存
 
+    //默认城市
+    var cityName = wx.getStorageSync('CityName');
+    if(!cityName || cityName==='清远市'){
+      https://qywebser.gdqyjp.com:2061/
+      this.globalData.baseUrl='https://qywebser.gdqyjp.com:2061/MobileHttp.aspx?Cmd='
+    }else{
+      this.globalData.baseUrl='https://mzwebser.gdqyjp.com:2071/MobileHttp.aspx?Cmd='
+    }
+
+    let menuButtonObject = wx.getMenuButtonBoundingClientRect();//获取胶囊按钮的信息
+    wx.getSystemInfo({
+      success: res => {
+        let statusBarHeight = res.statusBarHeight,
+        navTop = menuButtonObject.top,//胶囊按钮与顶部的距离
+        navHeight = statusBarHeight + menuButtonObject.height + (menuButtonObject.top - statusBarHeight)*2;//导航高度
+        this.globalData.navHeight = navHeight;
+        this.globalData.navTop = navTop;
+        this.globalData.statusBarHeight = statusBarHeight;
+      },
+      fail(err) {
+        console.log(err);
+      }
+    })
+ 
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -40,7 +64,10 @@ App({
   },
 
   globalData: {
-    userInfo: null
-    
+    userInfo: null,
+    navHeight:0,
+    navTop:0,
+    statusBarHeight:0,
+    baseUrl:''
   }
 })

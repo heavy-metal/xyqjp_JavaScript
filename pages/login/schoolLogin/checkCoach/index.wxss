@@ -1,0 +1,66 @@
+/* pages/login/studentLogin/checkCoach/index.wxss */
+.search_wrap {
+  display: flex;
+  align-items: center;
+  background-color: var(--themeColor);
+}
+.search_wrap .text_image_wrap {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70rpx;
+}
+.search_wrap .input_wrap {
+  flex: 5;
+}
+.coach_list .coachlist_item {
+  padding: 26rpx 0;
+  border-bottom: 5rpx solid var(--lineColor);
+  display: flex;
+}
+.coach_list .coachlist_item .coach_img_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coach_list .coachlist_item .coach_img_wrap image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  border: 5rpx solid var(--lineColor);
+}
+.coach_list .coachlist_item .coach_info_wrap {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.coach_list .coachlist_item .coach_info_wrap .coach_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.coach_list .coachlist_item .coach_info_wrap .coach_district {
+  color: darkgray;
+  font-size: 25rpx;
+}
+.coach_list .coachlist_item .coach_button_wrap {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coach_list .coachlist_item .coach_button_wrap .applyBtn {
+  font-size: 26rpx;
+  border: 1rpx solid darkgray;
+  border-radius: 20rpx;
+  text-align: center;
+  padding: 8rpx 40rpx;
+  margin-right: 20rpx;
+}
+.coach_list .coachlist_item .coach_button_wrap image {
+  width: 30rpx;
+}

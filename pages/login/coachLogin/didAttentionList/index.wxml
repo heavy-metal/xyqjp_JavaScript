@@ -1,0 +1,53 @@
+<!--pages/login/coachLogin/didAttentionList/index.wxml-->
+
+
+<view class="search_wrap">
+  <view class="text_image_wrap" bind:tap="searchTypeChange">
+     <view style="color:white">{{searchName}}</view> 
+     <van-icon name="arrow-down" style="color:white"/> 
+  </view>
+  <view class="input_wrap">
+     <van-search
+      value="{{ value }}"
+      shape="round"
+      background="var(--themeColor)"
+      placeholder="请输入搜索关键词"
+      bind:search="onSearch"
+      bind:change="searchbarChange"
+      bind:clear="searchClearClick"
+      />
+  </view>
+</view>
+
+
+<view class="coach_list">
+      <view class="coachlist_item" wx:for="{{listArray}}" wx:key="StuId" bind:tap="itemTap" data-index="{{index}}">
+        <view class="coach_img_wrap">
+            <image mode="aspectFill" src="{{item.StuImage}}"/>
+        </view>
+        <view class="coach_info_wrap">
+            <view class="coach_name">{{item.Name}}</view>
+            <view class="coach_district">{{item.SchoolName}}</view>
+        </view>  
+        <view class="coach_button_wrap">
+          <view class="applyBtn" hover-stop-propagation='true' catchtap="attentionBtnClick" data-index="{{index}}">已关注</view>
+          <image mode="widthFix" src="https://i.loli.net/2020/05/26/gMSLIY9onXT1DCV.png"/>
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+
+
+
+<!-- 切换搜索条件的类型 -->
+<van-action-sheet
+  show="{{ isShow }}"
+  actions="{{ searchTypeArray }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+  description="搜索条件"
+/>

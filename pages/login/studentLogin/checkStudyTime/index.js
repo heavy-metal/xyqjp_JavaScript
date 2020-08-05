@@ -9,7 +9,7 @@ Page({
     titleArray:['科目一','科目二','科目三','科目四'],
     listArray:[]
   },
-  totalPage,
+  totalPage:0,
 
   params:{
     UserId:'',
@@ -32,7 +32,7 @@ Page({
   getdata(){
     var model = wx.getStorageSync('loginModel');
     this.params.UserId = model.UserId
-    this.params.StuId = model.StuId
+    this.params.StuId = model.UserId
     request({url:'GetStudyList'},this.params)
     .then(result=>{
       this.setData({
@@ -41,5 +41,32 @@ Page({
       this.totalPage=result.data.Page.TotalPage
       wx.stopPullDownRefresh();
     })
-  }
+  },
+
+  tapsChangeClick(e){
+    this.setData({listArray:[]})
+    this.params.Subject=e.detail.index+1
+    this.getdata()
+  },
+
+  // 滚动条触底 上拉加载更多页
+  onReachBottom() { 
+    if(this.params.CurrentPage>=this.params.PageSize){
+      wx.showToast({
+        title: '\n没有更多了\n',
+        icon: 'none',
+        duration: 1500,
+      });
+    }else{
+      this.params.CurrentPage++;
+      this.getdata();
+    }
+  },
+  //下拉刷新
+  onPullDownRefresh(){
+      this.setData({listArray:[]})
+      this.params.CurrentPage = 1;
+      this.getdata()
+  },
+
 })

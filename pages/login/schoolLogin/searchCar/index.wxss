@@ -1,0 +1,40 @@
+/* pages/login/schoolLogin/searchCar/index.wxss */
+.school_list .schoollist_item {
+  padding: 26rpx 0;
+  border-bottom: 5rpx solid var(--lineColor);
+  display: flex;
+}
+.school_list .schoollist_item .school_img_wrap {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.school_list .schoollist_item .school_img_wrap image {
+  width: 80%;
+}
+.school_list .schoollist_item .school_info_wrap {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.school_list .schoollist_item .school_info_wrap .school_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.school_list .schoollist_item .school_info_wrap .school_district {
+  color: darkgray;
+  font-size: 25rpx;
+}
+.school_list .schoollist_item .school_button_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.school_list .schoollist_item .school_button_wrap image {
+  width: 30rpx;
+}

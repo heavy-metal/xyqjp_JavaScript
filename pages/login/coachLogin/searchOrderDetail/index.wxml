@@ -1,0 +1,10 @@
+<!--pages/login/coachLogin/searchOrderDetail/index.wxml-->
+
+    <view class="detail_list_wrap" wx:for="{{titleArray}}" wx:key="this">
+      <view class="detail_title">
+        <view class="title">{{item}}</view>
+      </view>
+      <view class="detail_subtitle">
+        <view class="subtitle">{{infoArray[index]}}</view>
+      </view>
+    </view>

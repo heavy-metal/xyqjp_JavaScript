@@ -1,0 +1,27 @@
+<!--pages/login/coachLogin/calendarList/index.wxml-->
+
+
+<van-calendar
+show-title="{{ false }}"
+  poppable="{{ false }}"
+  show-confirm="{{ false }}"
+  class="calendar"
+  bind:confirm="onConfirm"
+/>
+
+<view class="listview-container">
+  <block wx:for="{{listArray}}" wx:key="CoachId">
+    <view class="playlog-item" bindtap="itemTapped" data-index="{{index}}">
+      <view class="dotline">
+        <!-- 竖线 -->
+        <view class="line"></view>
+        <!-- 圆点 -->
+        <view class="dot"></view>
+        <!-- 时间戳 -->
+      </view>
+      <view class="content">
+        <text class="course">{{item.SchDate}}，  已约{{item.YwMinute}}分钟， 可约{{item.KyMinute}}分钟</text>
+      </view>
+    </view>
+  </block>
+</view>

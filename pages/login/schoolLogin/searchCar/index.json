@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-search": "../../category/search/index"
+  },
+  "navigationBarTitleText": "车辆查询",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

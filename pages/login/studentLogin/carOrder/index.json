@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "约车订单",
+  "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "coachCell": "../../component/coachCell/coachCell"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "约车列表",
+  "backgroundTextStyle": "dark"
+}

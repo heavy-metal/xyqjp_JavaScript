@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-search": "../../category/search/index",
+    "van-rate": "../../category/rate/index"
+  },
+  "navigationBarTitleText": "教练查询",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

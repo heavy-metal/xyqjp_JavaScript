@@ -1,0 +1,79 @@
+<!--pages/login/suggest/index.wxml-->
+
+<van-tabs active="{{active}}" bind:change="tabsChange" sticky animated swipeable color="var(--themeColor)" border="false">
+  <van-tab title="填写">
+    <view class="type_wrap">
+        <view>反馈类型:</view>
+        <view class="selected_login_type">
+            <view class="changeLoginType" bind:tap="clickLoginType">
+              <view style="font-size:26rpx">{{typeName}}</view> 
+              <van-icon name="arrow-down"/> 
+            </view>
+        </view>
+    </view>
+    <view class="title_field">
+      <van-cell-group>
+        <van-field
+        value="{{ value }}"
+        autosize
+        type="textarea"
+        placeholder="标题，不超过25字"
+        maxlength="25"
+        border="{{ false }}"
+        bind:change="titleOnChange"
+        />
+      </van-cell-group>
+    </view>
+    <view class="title_field" style="margin-top:30rpx;height:400rpx">
+      <van-cell-group>
+        <van-field
+        value="{{ message }}"
+        type="textarea"
+        placeholder="内容，不超过300字"
+        autosize
+        border="{{ false }}"
+        width="100%"
+        height="100%"
+        maxlength="300"
+        bind:change="contentOnChange"
+        />
+      </van-cell-group>      
+      
+    </view>
+    <view class="applyBtn_wrap">
+      <view class="applyBtn" bind:tap="BtnClick">确 认</view>
+    </view>
+  </van-tab>
+ 
+  <van-tab title="历史">
+    <view wx:if="{{listArray.length===0}}">
+       <image mode="widthFix" style="width:100vw" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590739419381&di=b7241e0627f0d40f9b162c16048a520c&imgtype=0&src=http%3A%2F%2Fwww.qianyisou.com%2FContent%2FImages%2Fmbno_img.jpg"/>
+    </view>
+    <view class="classList_item" wx:for="{{listArray}}" wx:key="FeedbackId" bind:tap="suggestDetailClick" data-index="{{index}}">
+      <view class="class_info">        
+        <view class="class_image_text_wrap">        
+          <image src="https://i.loli.net/2020/06/18/yKAQVDZozYf1PGd.png" mode="widthFix"/>
+          <view class="class_titleText">{{item.Title}}</view>
+        </view>
+        <view class="class_image_text_wrap">
+          <image src="https://i.loli.net/2020/06/18/4vjYEh7TsqeJrz6.png" mode="widthFix"/>
+          <view class="class_titleText" style="color: darkgray;">{{item.FeedbackTime}}</view>
+        </view>
+      </view>
+      <view class="class_applybutton">
+        <view class="applyBtn" bind:tap="evaluationClick">{{statesArray[item.OpState]}}</view>
+        <image mode="widthFix" src="https://i.loli.net/2020/05/26/gMSLIY9onXT1DCV.png"/>
+      </view>
+     
+    </view>
+  </van-tab>
+</van-tabs>
+
+<!-- 切换反馈类型 -->
+<van-action-sheet
+  show="{{ isShow }}"
+  actions="{{ typeArray }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+  description="反馈类型"
+/>

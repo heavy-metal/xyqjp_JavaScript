@@ -1,0 +1,40 @@
+<!--pages/login/studentLogin/carOrderDetail/index.wxml-->
+
+<van-tabs bind:change="changeTabsClick" sticky animated swipeable color="var(--themeColor)" border="false">
+  <van-tab title="订单详情">
+    <view class="detail_list_wrap" wx:for="{{titleArray}}" wx:key="this">
+      <view class="detail_title">
+        <view class="title">{{item}}</view>
+      </view>
+      <view class="detail_subtitle">
+        <view class="subtitle">{{infoArray[index]}}</view>
+      </view>
+    </view>
+    <view class="detail_applyBtn_wrap">
+      <view class="detail_applyBtn" bind:tap="cancelOrderClick">取消订单</view>
+    </view>
+  </van-tab>
+ 
+  <van-tab title="评价">
+    <view class="score_wrap" >
+      <view class="score_title_contain" wx:for="{{scoreTitleArray}}" wx:key="this" >
+        <view style="padding-right:20rpx">{{item}}</view>
+        <van-rate readonly="{{scoreArray.length!=0}}" size="25px" value="{{scoreArray[index]}}" bind:change="starsonChange" data-index="{{index}}"/>
+      </view>
+    </view>
+    <view class="write_wrap" style="border:1rpx solid darkgray;margin:20rpx;height:200rpx">
+      <textarea 
+      value="{{content}}"
+      disabled="{{content!=''}}"
+       style="height:100%;width:100%"
+       fixed="true"
+       placeholder="请输入您的评语......"
+       bindinput="field_change"
+       >
+       </textarea> 
+    </view>
+    <view wx:if="{{StuPjState===0}}" class="detail_applyBtn_wrap">
+      <view class="detail_applyBtn" bind:tap="uploadScoreClick">提 交</view>
+    </view>
+  </van-tab>
+</van-tabs>

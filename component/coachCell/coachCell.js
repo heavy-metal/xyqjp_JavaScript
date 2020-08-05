@@ -27,6 +27,10 @@ Component({
     starValue:{
       type:Number,
       value:5
+    },
+    buttonName:{
+      type:String,
+      value:'报名'
     }
   },
 
@@ -36,7 +40,6 @@ Component({
   data: {
     
   },
-
   /**
    * 组件的方法列表
    */

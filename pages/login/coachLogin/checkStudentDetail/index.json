@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "checkStudyTimeCell": "../../component/checkStudyTimeCell/checkStudyTimeCell",
+    "van-circle": "../../category/circle/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "学员信息",
+  "backgroundTextStyle": "dark"
+}

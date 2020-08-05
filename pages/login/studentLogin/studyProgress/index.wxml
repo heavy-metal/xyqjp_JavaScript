@@ -1,0 +1,50 @@
+<!--pages/login/studentLogin/studyProgress/index.wxml-->
+
+<view class="student_info">
+    <view class="left_info_wrap">
+       <view class="info_wrap">
+          <van-icon name="user-o" size="30rpx"/>
+          <view class="name">姓名:</view>
+          <view style="color:darkgray">{{model.Name}}</view>
+       </view>
+       <view class="info_wrap">
+          <van-icon name="cluster-o" size="30rpx"/>
+          <view class="name">类型:</view>
+          <view style="color:darkgray">{{model.TrainType}}</view>
+       </view>
+    </view>
+    <view class="left_info_wrap">
+       <view class="info_wrap">
+          <van-icon name="todo-list-o" size="30rpx"/>
+          <view class="name">总培训状态:</view>
+          <view style="color:darkgray">{{model.TStudyState}}</view>
+       </view>
+    </view>
+</view>
+
+<view class="title_tab" wx:for="{{arr}}" wx:key="this" wx:for-index="index1" wx:for-item="item1">
+    <view class="title_contain">
+      <view class="left_title_wrap">
+        <view class="title">{{item1.title}}</view>
+        <view class="states">{{item1.states}}</view>
+      </view>
+      <view class="right_title_wrap">
+        <view>(完成/大纲) (小时)</view>
+      </view>        
+    </view>
+ 
+    <view class="progress_contain">
+        <view class="progress_text_wrap" wx:for="{{item1.data}}" wx:for-item="item2" wx:for-index="index2" wx:key="this">
+            <van-circle 
+             stroke-width="8" 
+             size="90"
+             speed="200"
+             layer-color="#F2F3F7" 
+             color="{{ gradientColor }}" 
+             value="{{ item2.progress }}" 
+             text="{{ item2.progress }}%"/>
+            
+            <view style="color:darkgray;font-size:24rpx">{{item2.didstudy}}</view>
+        </view>
+    </view>
+</view>

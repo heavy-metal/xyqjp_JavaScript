@@ -1,0 +1,11 @@
+<!--pages/login/suggestDetail/index.wxml-->
+
+<view class="container" wx:for="{{titleArray}}" wx:key="this">
+    <view class="title_wrap">
+        <view class="title">{{item}}</view>
+    </view>
+    <view class="content_wrap">
+        <view class="content">{{contentArray[index]}}</view>
+    </view>
+    
+</view>

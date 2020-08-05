@@ -40,7 +40,7 @@
 }
 .coach_list .coachlist_item .coach_button_wrap .applyBtn {
   font-size: 28rpx;
-  border: 4rpx solid var(--lineColor);
+  border: 1rpx solid darkgray;
   border-radius: 20rpx;
   text-align: center;
   padding: 8rpx 40rpx;

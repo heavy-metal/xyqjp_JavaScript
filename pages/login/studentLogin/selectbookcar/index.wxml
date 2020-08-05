@@ -1,0 +1,24 @@
+<!--pages/login/studentLogin/selectbookcar/index.wxml-->    
+
+<view class="title_wrap">
+  <van-tabs bind:change="tapsChangeClick" sticky animated swipeable color="var(--themeColor)" border="false">  
+    <van-tab wx:for="{{titleArray}}" wx:key="this" title="{{item.SchDate}}">
+    </van-tab>
+  </van-tabs>    
+</view>
+
+<view class="info_wrap">
+  <view class="message_wrap" wx:for="{{infoArray}}" wx:key="Id" bind:tap="selectedTimeClick" data-index="{{index}}">
+    <view class="time">{{item.SchTimeBegin}} ~ {{item.SchTimeEnd}}</view> 
+    <view class="type_money">{{item.Subject}} ${{item.Price}}</view>
+    <view class="regionName">{{item.RegionName}}</view>
+    <view class="image_select">
+       <image src="{{item.selected?selectIcon:notSelectIcon}}" mode="widthFix"/>  
+    </view>
+  </view>
+ 
+</view>
+
+<view class="submit_wrap" bind:tap="submitClick">
+  <view class="submit">提交</view>
+</view>

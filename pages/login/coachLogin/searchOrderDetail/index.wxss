@@ -1,0 +1,25 @@
+/* pages/login/coachLogin/searchOrderDetail/index.wxss */
+.detail_list_wrap {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2rpx solid var(--lineColor);
+  padding: 20rpx 10rpx;
+}
+.detail_list_wrap .detail_title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.detail_list_wrap .detail_title .title {
+  font-size: 30rpx;
+}
+.detail_list_wrap .detail_subtitle {
+  flex: 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.detail_list_wrap .detail_subtitle .subtitle {
+  color: darkgray;
+  text-align: right;
+}

@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "checkStudyTimeCell": "../../component/checkStudyTimeCell/checkStudyTimeCell"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "学时查询",
+  "backgroundTextStyle": "dark"
 }

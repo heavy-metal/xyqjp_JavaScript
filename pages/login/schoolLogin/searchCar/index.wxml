@@ -1,0 +1,31 @@
+<!--pages/login/schoolLogin/searchCar/index.wxml-->
+
+<view class="search_wrap">
+  <view class="input_wrap">
+     <van-search
+      value="{{ value }}"
+      shape="round"
+      background="var(--themeColor)"
+      placeholder="请输入搜索关键词"
+      bind:search="onSearch"
+      bind:change="searchbarChange"
+      bind:clear="searchClearClick"
+      />
+  </view>
+</view>
+
+<view class="school_list">
+      <view class="schoollist_item" wx:for="{{listArray}}" wx:key="CarId" bind:tap="itemTap" data-index="{{index}}">
+        <view class="school_img_wrap">
+            <image mode="widthFix" src="{{item.CarImage}}"/>
+        </view>
+        <view class="school_info_wrap">
+            <view class="school_name">{{item.LicNum}}</view>
+            <view class="school_district">{{item.SyncState}}</view>
+            <view style="color:darkgray;font-size: 25rpx;">购买于{{item.BuyDate}}</view>
+        </view>  
+        <view class="school_button_wrap">
+          <image mode="widthFix" src="https://i.loli.net/2020/05/26/gMSLIY9onXT1DCV.png"/>
+        </view>
+    </view>
+</view>

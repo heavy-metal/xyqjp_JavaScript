@@ -1,0 +1,50 @@
+<!--pages/login/changePassword/index.wxml-->
+
+
+<van-cell-group>
+  <view class="name_field_wrap">
+    <text class="iconfont icon-mima"></text>
+    <van-field class="text_field"
+    placeholder="请输入旧密码"
+    error-message=""
+    required
+    value="{{ usernameValue }}"
+    border="{{ false }}"
+    clearable
+    type="password"
+    bind:change="oldPasswordClick"
+  />
+  </view>
+  
+  <view class="name_field_wrap">
+    <text class="iconfont icon-mima"></text>  
+    <van-field class="text_field"
+    placeholder="请输入新密码"
+    error-message=""
+    required
+    value="{{ passwordValue }}"
+    type="password"
+    border="{{ false }}"
+    clearable
+    bind:change="newPasswordClick"
+  />
+  </view>
+
+  <view class="name_field_wrap">
+    <text class="iconfont icon-mima"></text>  
+    <van-field class="text_field"
+    placeholder="再次输入新密码"
+    error-message=""
+    required
+    value="{{ passwordValue }}"
+    type="password"
+    border="{{ false }}"
+    clearable
+    bind:change="againPasswordClick"
+  />
+  </view>
+</van-cell-group>
+
+<view class="applyBtn_wrap">
+    <view class="applyBtn" bind:tap="changeBtnClick" data-index="{{index}}">确 认</view>
+</view>

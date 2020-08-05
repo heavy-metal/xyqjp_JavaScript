@@ -27,6 +27,16 @@
   description="登录方式"
 />
 
+<!-- 切换城市选择 -->
+<van-action-sheet
+  show="{{ isChooseCityShow }}"
+  actions="{{ cityArray }}"
+  bind:close="onCityClose"
+  bind:select="onCitySelect"
+  description="选择城市"
+/>
+
+
 <view class="selected_login_type">
   <van-icon name="setting-o" size="40rpx" color="darkgray"/>
   <view class="changeLoginType" bind:tap="clickLoginType">
@@ -70,9 +80,15 @@
   </view>
 
   <view class="remberPsw">
-    <checkbox-group bindchange="handleAllcheckItem">
-      <checkbox checked="{{isRemberPassword}}">记住密码</checkbox>
-    </checkbox-group>
+    <view class="left_wrap">
+      <checkbox-group bindchange="handleAllcheckItem">
+        <checkbox checked="{{isRemberPassword}}">记住密码</checkbox>
+      </checkbox-group>
+    </view>
+    <view class="right_wrap" bind:tap="chooseCityClick">
+      <text class="iconfont icon-jiantou-copy-copy"></text>
+      <view>{{cityName}}</view>
+    </view>
   </view>
 </van-cell-group>
 

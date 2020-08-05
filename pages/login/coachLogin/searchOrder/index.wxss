@@ -1,0 +1,67 @@
+/* pages/login/coachLogin/searchOrder/index.wxss */
+.navView {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, #7F7FD5, #86A8E7, #91EAE4);
+}
+.navView .choosetime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navView .choosetime .time_text {
+  color: white;
+}
+.backbtn {
+  position: fixed;
+  left: 0rpx;
+  height: 44px;
+  width: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.classList_item {
+  display: flex;
+  border-bottom: 5rpx solid var(--lineColor);
+}
+.classList_item .class_info {
+  height: 210rpx;
+  padding-left: 25rpx;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.classList_item .class_info .class_image_text_wrap {
+  display: flex;
+  align-items: center;
+}
+.classList_item .class_info .class_image_text_wrap image {
+  width: 40rpx;
+}
+.classList_item .class_info .class_image_text_wrap .class_titleText {
+  font-size: 26rpx;
+  padding-left: 10rpx;
+}
+.classList_item .class_applybutton {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.classList_item .class_applybutton .applyBtn {
+  font-size: 26rpx;
+  border: 1rpx solid darkgray;
+  border-radius: 20rpx;
+  text-align: center;
+  padding: 8rpx 40rpx;
+  margin-right: 20rpx;
+}
+.classList_item .class_applybutton image {
+  width: 30rpx;
+}

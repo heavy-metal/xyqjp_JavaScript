@@ -1,67 +1,18 @@
 <!--pages/login/studentLogin/checkStudyTime/index.wxml-->
 <view class="student_checktime_wrap">
-  <van-tabs bind:change="onClick" sticky animated swipeable color="var(--themeColor)" border="false">  
-    <van-tab wx:for="{{titleArray}}" wx:key="this" wx:for-index="index1" wx:for-item="item1" title="{{item}}">
-     <view wx:if="{{classList.length===0}}">
-       <image mode="widthFix" style="width:100vw" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590739419381&di=b7241e0627f0d40f9b162c16048a520c&imgtype=0&src=http%3A%2F%2Fwww.qianyisou.com%2FContent%2FImages%2Fmbno_img.jpg"/>
-     </view>
-     <view class="classList_item" wx:for="{{classList}}" wx:key="ClassId">
-      <view class="class_info">        
-        <view class="class_image_text_wrap">        
-          <image src="https://i.loli.net/2020/05/28/lKuWrO9QPUVXsm7.png" mode="widthFix"/>
-          <view class="class_titleText">{{item.ClassName}}</view>
-        </view>
-        <view class="class_image_text_wrap">
-          <image src="https://i.loli.net/2020/05/28/Q8GfiUTOehCF7Nl.png" mode="widthFix"/>
-          <view class="class_titleText">车型: {{item.VehicleType}}</view>
-        </view>
-        <view class="class_image_text_wrap">
-          <image src="https://i.loli.net/2020/05/28/4cu8rwQaiejoTqp.png" mode="widthFix"/>
-          <view class="class_titleText" style="color:darkgray">${{item.Amount}}</view>
-        </view>
-      </view>
-      <view class="class_applybutton">
-        <view class="applyBtn" bind:tap="classApplyBtnClick" data-index="{{index}}">照片</view>
-      </view>
-    </view>       
+  <van-tabs bind:change="tapsChangeClick" sticky animated swipeable color="var(--themeColor)" border="false">  
+    <van-tab wx:for="{{titleArray}}" wx:key="this" title="{{item}}">
     </van-tab>
   </van-tabs>    
 </view>
 
-<!-- <van-tabs bind:change="onClick" sticky animated swipeable color="var(--themeColor)" border="false">
-  <van-tab title="">
-    
-  </van-tab>
- 
-  <van-tab title="报班">
-    <view wx:if="{{classList.length===0}}">
-       <image mode="widthFix" style="width:100vw" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590739419381&di=b7241e0627f0d40f9b162c16048a520c&imgtype=0&src=http%3A%2F%2Fwww.qianyisou.com%2FContent%2FImages%2Fmbno_img.jpg"/>
-    </view>
-    <view class="classList_item" wx:for="{{classList}}" wx:key="ClassId">
-      <view class="class_info">        
-        <view class="class_image_text_wrap">        
-          <image src="https://i.loli.net/2020/05/28/lKuWrO9QPUVXsm7.png" mode="widthFix"/>
-          <view class="class_titleText">{{item.ClassName}}</view>
-        </view>
-        <view class="class_image_text_wrap">
-          <image src="https://i.loli.net/2020/05/28/Q8GfiUTOehCF7Nl.png" mode="widthFix"/>
-          <view class="class_titleText">车型: {{item.VehicleType}}</view>
-        </view>
-        <view class="class_image_text_wrap">
-          <image src="https://i.loli.net/2020/05/28/4cu8rwQaiejoTqp.png" mode="widthFix"/>
-          <view class="class_titleText" style="color:orange">${{item.Amount}}元</view>
-        </view>
-      </view>
-      <view class="class_applybutton">
-        <view class="applyBtn" bind:tap="classApplyBtnClick" data-index="{{index}}">报名</view>
-        <image mode="widthFix" src="https://i.loli.net/2020/05/26/gMSLIY9onXT1DCV.png"/>
-      </view>
-    </view>
-  </van-tab>
-  <van-tab title="详情">
-    
-  </van-tab>
-  <van-tab title="详情">
-    
-  </van-tab>
-</van-tabs> -->
+<view class="check_time_list" wx:for="{{listArray}}" wx:key="this" >
+  <checkStudyTimeCell model="{{item}}"></checkStudyTimeCell>
+</view>
+<view wx:if="{{listArray.length===0}}">
+  <image mode="widthFix" style="width:100vw" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590739419381&di=b7241e0627f0d40f9b162c16048a520c&imgtype=0&src=http%3A%2F%2Fwww.qianyisou.com%2FContent%2FImages%2Fmbno_img.jpg"/>
+</view>
+
+
+  
+

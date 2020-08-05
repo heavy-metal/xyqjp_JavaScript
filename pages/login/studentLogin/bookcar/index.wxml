@@ -1,0 +1,15 @@
+<!--pages/login/studentLogin/bookcar/index.wxml-->
+
+
+<view class="coach_list" wx:for="{{listArray}}" wx:key="CoachId" data-index="{{index}}">
+   <navigator url="/pages/login/studentLogin/selectbookcar/index?CoachId={{item.CoachId}}">
+    <coachCell
+      image="{{item.CoachImage}}"
+      title="{{item.Name}}"
+      subtitle="{{item.SchoolName}}"
+      model="{{item}}"
+      isHiddenApplyBtn="true"
+      starValue="{{item.StarLevel===0?5:item.StarLevel}}"
+    ></coachCell>
+   </navigator>  
+  </view>  

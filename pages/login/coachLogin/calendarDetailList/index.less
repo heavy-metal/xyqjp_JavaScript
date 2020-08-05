@@ -1,0 +1,96 @@
+/* pages/login/coachLogin/calendarDetailList/index.wxss */
+
+.classList_item{
+    
+    display: flex;
+    border-bottom: 5rpx solid var(--lineColor);
+   .class_info{
+        height: 160rpx;
+       padding-left: 25rpx;
+       flex: 3;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+       
+       .class_image_text_wrap{
+        display: flex;
+        align-items: center;
+        image{width: 40rpx;}
+        .class_titleText{padding-left: 10rpx;}
+       }
+      
+   } 
+   .class_applybutton{
+       flex: 2;
+       display: flex;
+       align-items: center;
+       justify-content: center;       
+       .applyBtn{
+          font-size: 28rpx;
+          border: 4rpx solid var(--lineColor);
+          border-radius: 20rpx;
+          text-align: center;
+          padding: 8rpx 40rpx;
+          margin-right: 20rpx;
+       }
+       image{width:30rpx}
+   }
+}
+
+
+
+.detail_list_wrap{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2rpx solid var(--lineColor);
+    padding: 35rpx 15rpx;
+    .detail_title{
+        flex: 2;
+        display: flex;
+        
+        align-items: center;
+        .title{
+            font-size: 30rpx;
+        }
+    }
+    .detail_subtitle{
+        flex: 6;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .subtitle{
+            color: darkgray;
+            text-align: right;
+        }
+    }
+}
+
+.applyBtn_wrap{
+    padding-top: 15rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .applyBtn{
+        width:80vw;
+        color: white;
+        // background-color: var(--themeColor);
+        background:linear-gradient(to right,#7F7FD5, #86A8E7,#91EAE4);
+        border: 1rpx solid darkgray;
+        border-radius: 30rpx;
+        padding: 25rpx 10rpx;
+        text-align: center;
+    }
+}
+
+.Charges{
+    padding: 30rpx 0;
+    border-bottom: 2rpx solid var(--lineColor);
+    .title{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        padding: 20rpx;
+    }
+}

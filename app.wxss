@@ -7,6 +7,7 @@ page,view,text,swiper,swiper-item,image,navigator,van-tabs,van-tab{
 /* 主题颜色 */
 page {
   --themeColor: #60CAC3;
+  /* --themeColor:linear-gradient(to right,#7F7FD5, #86A8E7,#91EAE4); */
   font-size: 28rpx;
   --lineColor: #F2F3F7;
 }

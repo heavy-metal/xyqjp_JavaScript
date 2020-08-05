@@ -1,0 +1,19 @@
+/* pages/login/suggestDetail/index.wxss */
+.container {
+  display: flex;
+  align-items: center;
+  padding: 25rpx;
+  border: 1rpx solid var(--lineColor);
+}
+.container .title_wrap {
+  flex: 2;
+}
+.container .title_wrap .title {
+  width: 130rpx;
+}
+.container .content_wrap {
+  flex: 6;
+}
+.container .content_wrap .content {
+  color: darkgray;
+}
